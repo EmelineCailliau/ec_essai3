@@ -104,7 +104,9 @@ view: order_items {
   }
 
   measure: NombreCommandes{
-    type: count
+    type: count_distinct
+    sql: ${order_id} ;;
+    drill_fields: [detail*]
   }
 
   measure: NombreMois {
