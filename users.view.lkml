@@ -46,6 +46,11 @@ view: users {
   dimension: email {
     type: string
     sql: ${TABLE}."EMAIL" ;;
+    link: {
+      label: "Infos Utilisateur"
+      url: "/dashboards/19?Email={{ value | encode_uri }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: first_name {

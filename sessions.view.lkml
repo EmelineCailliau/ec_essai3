@@ -209,8 +209,7 @@ view: sessions {
 
     filters: {
       field: furthest_funnel_step
-      value: "(2) Browse,(3) View Product,(4) Add to Cart,(5) Purchase
-      "
+      value: "(2) Browse,(3) View Product,(4) Add to Cart,(5) Purchase"
     }
 
     drill_fields: [detail*]
@@ -223,8 +222,7 @@ view: sessions {
 
     filters: {
       field: furthest_funnel_step
-      value: "(3) View Product,(4) Add to Cart,(5) Purchase
-      "
+      value: "(3) View Product,(4) Add to Cart,(5) Purchase"
     }
 
     drill_fields: [detail*]
@@ -237,8 +235,7 @@ view: sessions {
 
     filters: {
       field: furthest_funnel_step
-      value: "(4) Add to Cart,(5) Purchase
-      "
+      value: "(4) Add to Cart,(5) Purchase"
     }
 
     drill_fields: [detail*]
@@ -251,8 +248,7 @@ view: sessions {
 
     filters: {
       field: furthest_funnel_step
-      value: "(5) Purchase
-      "
+      value: "(5) Purchase"
     }
 
     drill_fields: [detail*]
