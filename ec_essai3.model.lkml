@@ -5,7 +5,7 @@ label: "EC essai snowlooker"  # nom du projet qui sera afficher
 include: "*.view"
 
 datagroup: ec_essai3_default_datagroup {
-  sql_trigger: SELECT MAX(id) FROM etl_log;;  # Cette requête renvoie un nouveau nombre dès qu'il y a des nouvelles données, ce qui déclanche le renouvellement des données du cache
+  sql_trigger: SELECT MAX(id) FROM order_items;;  # Cette requête renvoie un nouveau nombre dès qu'il y a des nouvelles données, ce qui déclanche le renouvellement des données du cache
   max_cache_age: "1 hour"  # les données du caches sont renouvellées toutes les "max_cache_age" heures maximum (si pas déclanchées par le sql_triger)
 }
 
