@@ -121,7 +121,7 @@ view: users {
 
   dimension: history {  # affiche un lien menant vers un tableau contenant la liste des détails la vue order_item pour ce client
     sql: ${TABLE}.id ;;
-    html: <a href="/explore/ec_essai3/order_items?fields=order_items.detail*&f[users.id]={{ value }}">Order History</a> ;; # value correspond à l'id
+    html: <a href="/explore/ec_essai3/order_items?fields=order_items.detail*&f[users.id]={{ value }}"> Order History </a> ;; # value correspond à l'id
   }
 
   measure: count {
