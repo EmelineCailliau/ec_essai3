@@ -69,6 +69,14 @@ view: users {
           WHEN ${gender}='Female' THEN 'Femme'
           ELSE 'Inconnu'
         END ;;
+    # ajouter couleurs de font selon le genre (l'utilisation du paramètre html ne permet pas de garder le zoom sur les données avce les drill-fields)
+    html:
+      {% if value == 'Homme' %}
+      <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
+      {% else %}
+      <p style="color: black; background-color: pink; font-size:100%; text-align:center">{{ rendered_value }}</p>
+    {% endif %}
+    ;;
   }
 
   dimension: last_name {
