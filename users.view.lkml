@@ -15,12 +15,17 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}."CITY" ;;
+    group_label: "Lieu"
   }
 
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}."COUNTRY" ;;
+    sql: CASE WHEN ${TABLE}.country = 'UK' THEN 'United Kingdom'
+    ELSE ${TABLE}."COUNTRY"
+    END
+    ;;
+    group_label: "Lieu"
   }
 
   dimension: majeur {
@@ -56,6 +61,7 @@ view: users {
   dimension: first_name {
     type: string
     sql: ${TABLE}."FIRST_NAME" ;;
+    group_label: "Nom"
   }
 
   dimension: gender {
@@ -82,27 +88,32 @@ view: users {
   dimension: last_name {
     type: string
     sql: ${TABLE}."LAST_NAME" ;;
+    group_label: "Nom"
   }
 
   # Concaténation du prénom et du nom
   dimension: name {
     sql: ${first_name} || ' ' || ${last_name} ;;
+    group_label: "Nom"
   }
 
   dimension: latitude {
     type: number
     sql: ${TABLE}."LATITUDE" ;;
+    group_label: "Lieu"
   }
 
   dimension: longitude {
     type: number
     sql: ${TABLE}."LONGITUDE" ;;
+    group_label: "Lieu"
   }
 
   dimension: location {
     type: location
     sql_latitude: ${TABLE}.latitude ;;
     sql_longitude: ${TABLE}.longitude ;;
+    group_label: "Lieu"
   }
 
   dimension: approx_location {
@@ -110,11 +121,14 @@ view: users {
     drill_fields: [location]
     sql_latitude: round(${TABLE}.latitude,1) ;;
     sql_longitude: round(${TABLE}.longitude,1) ;;
+    group_label: "Lieu"
   }
 
   dimension: state {
     type: string
+    map_layer_name: us_states
     sql: ${TABLE}."STATE" ;;
+    group_label: "Lieu"
   }
 
   dimension: traffic_source {
@@ -124,12 +138,15 @@ view: users {
 
   dimension: zip {
     type: zipcode
+    map_layer_name: us_zipcode_tabulation_areas
     sql: ${TABLE}."ZIP" ;;
+    group_label: "Lieu"
   }
 
   dimension: history {  # affiche un lien menant vers un tableau contenant la liste des détails la vue order_item pour ce client
     sql: ${TABLE}.id ;;
     html: <a href="/explore/ec_essai3/order_items?fields=order_items.detail*&f[users.id]={{ value }}"> Order History </a> ;; # value correspond à l'id
+    view_label: "Users Hisory"
   }
 
   measure: count {
