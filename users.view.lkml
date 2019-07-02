@@ -61,7 +61,7 @@ view: users {
   dimension: first_name {
     type: string
     sql: ${TABLE}."FIRST_NAME" ;;
-    group_label: "Nom"
+    group_label: "Identité"
   }
 
   dimension: gender {
@@ -88,13 +88,13 @@ view: users {
   dimension: last_name {
     type: string
     sql: ${TABLE}."LAST_NAME" ;;
-    group_label: "Nom"
+    group_label: "Identité"
   }
 
   # Concaténation du prénom et du nom
   dimension: name {
     sql: ${first_name} || ' ' || ${last_name} ;;
-    group_label: "Nom"
+    group_label: "Identité"
   }
 
   dimension: latitude {

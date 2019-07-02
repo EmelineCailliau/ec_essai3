@@ -104,6 +104,7 @@ view: order_items {
   }
 
   measure: NombreCommandes{
+    label: "Nombre de commandes"
     type: count_distinct
     sql: ${order_id} ;;
     drill_fields: [order_id, user_id, created_date, PrixVenteTotal]

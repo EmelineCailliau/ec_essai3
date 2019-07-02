@@ -36,6 +36,10 @@ explore: essaiexcel {
 
 explore: order_items {
   label: "Commandes et utilisateurs"  # affiché dans le menu "Explore"
+  access_filter: {
+    field: distribution_centers.name
+    user_attribute: distribution_center
+  }
 
   # "Views" inclues dans le explore :
 
