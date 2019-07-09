@@ -16,6 +16,7 @@ view: users {
     type: string
     sql: ${TABLE}."CITY" ;;
     group_label: "Lieu"
+    html: {{ rendered_value }} ({{ state._rendered_value }}, {{ country._rendered_value }});;
   }
 
   dimension: country {
@@ -23,8 +24,7 @@ view: users {
     map_layer_name: countries
     sql: CASE WHEN ${TABLE}.country = 'UK' THEN 'United Kingdom'
     ELSE ${TABLE}."COUNTRY"
-    END
-    ;;
+    END;;
     group_label: "Lieu"
   }
 
@@ -151,6 +151,6 @@ view: users {
 
   measure: count {
     type: count
-    drill_fields: [id, name, email, age, created_date, orders.count, order_items.count]
+    #drill_fields: [id, name, email, age, created_date, orders.count, order_items.count]
   }
 }

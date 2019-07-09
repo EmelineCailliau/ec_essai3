@@ -60,18 +60,4 @@ view: products {
     sql: ${cost} ;;
     value_format_name: eur
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
