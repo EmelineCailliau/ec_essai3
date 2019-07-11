@@ -50,7 +50,7 @@ view: users {
 
   dimension: email {
     type: string
-    sql: "ecailliau@synergy.fr" ;;
+    sql: ${TABLE}."EMAIL" ;;
     link: {
       label: "Infos Utilisateur"
       url: "/dashboards/19?Email={{ value | encode_uri }}"
@@ -62,7 +62,7 @@ view: users {
       icon_url: "https://sendgrid.com/favicon.ico"
       param: {
         name: "looker"  # Sur votre compte SendGrid : "Settings" -> "API Keys" -> "Create API Key" -> Copier le nom de la clé ici
-        value: "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"  # Sur votre compte SendGrid : "Settings" -> "API Keys" -> "Create API Key" -> Copier la clé ici
+        value: "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"  # Sur votre compte SendGrid : "Settings" -> "API Keys" -> "Create API Key" -> Copier la clé ici
       }
       form_param: {
         name: "Subject"
