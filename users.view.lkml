@@ -50,7 +50,7 @@ view: users {
 
   dimension: email {
     type: string
-    sql: ${TABLE}."EMAIL" ;;
+    sql: "ecailliau@synergy.fr" ;;
     link: {
       label: "Infos Utilisateur"
       url: "/dashboards/19?Email={{ value | encode_uri }}"
